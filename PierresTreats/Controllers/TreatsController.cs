@@ -23,7 +23,7 @@ namespace PierresTreats.Controllers
       _db = db;
     }
 
-    [AllowAnonymous] //anyone can see list of treats
+    // [AllowAnonymous] //anyone can see list of treats
     public async Task<ActionResult> Index()
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -54,7 +54,7 @@ namespace PierresTreats.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Detail(int id)
+    public ActionResult Details(int id)
     {
       var thisTreat = _db.Treats
         .Include(treat => treat.JoinEntities)

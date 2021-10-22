@@ -12,11 +12,11 @@
   @Html.HiddenFor(m => m.TreatId)
 
   <h4>@Html.LabelFor(m => m.TreatName)</h4>
-  @Html.EditorFor(m => m.TreatName, new { htmlAttributes = new { @class = "form-control" @required = "required" } })
+  @Html.EditorFor(m => m.TreatName, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
   
   <br>
   <h4>@Html.LabelFor(m => m.Rating)</h4>
-  @Html.EditorFor(m => m.Rating, new { htmlAttributes = new { @class = "form-control" @required = "required" } })
+  @Html.EditorFor(m => m.Rating, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
 
   <br>
   <input type="submit" value="Save" class="btn btn-light ButtonText"/>

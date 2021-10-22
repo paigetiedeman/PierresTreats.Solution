@@ -11,10 +11,8 @@
 
 @if (@Model.JoinEntities.Count == 0)
 {
-  <li>/p>>This treat has one flavor: Plain</li>
-  <ul>
-    <li>220 Calories</li>
-  </ul>
+  <h5>This treat has one flavor: Plain</h5>
+    <p><em>220 Calories</em></p>
 }
 else
 {
@@ -25,7 +23,7 @@ else
       <div class="card text-center mb-3" style="width 22rem;">
         <div class="card-body">
           <h5 class="card-title">@join.Flavor.FlavorName</h5>
-            <p class="card-text">@join.Flavor.Calories</p>
+            <p class="card-text">@join.Flavor.Calories Calories</p>
             @using (Html.BeginForm("DeleteFlavor", "Treats"))
             {
               @Html.Hidden("joinId", @join.FlavorTreatId)

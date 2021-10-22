@@ -1,0 +1,23 @@
+div#Header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: cornflowerblue;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.HeaderText {
+  color: white;
+}
+
+.ButtonText {
+  color: white;
+}
+
+.ButtonText:Hover {
+  color: cornflowerblue;
+}
+
+body {
+  text-align: center;
+}

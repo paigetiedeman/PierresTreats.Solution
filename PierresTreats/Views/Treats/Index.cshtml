@@ -5,7 +5,7 @@
 @using PierresTreats.Models
 @model IEnumerable<PierresTreats.Models.Treat>
 
-<h2>@User.Identity.Name's Recipes</h2>
+<h2>@User.Identity.Name's Treats</h2>
 <hr>
 
 @if (Model.Any())
@@ -22,3 +22,10 @@
     </div>
   }
 }
+else
+{
+  <p>You have no treats yet.</p>
+}
+
+<br>
+<p class= "btn btn-light">@Html.ActionLink("Add a Treat", "Create", null, null, new { @class = "ButtonText" })</p>

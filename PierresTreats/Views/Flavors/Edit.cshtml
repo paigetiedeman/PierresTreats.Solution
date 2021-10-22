@@ -12,7 +12,7 @@
   @Html.HiddenFor(m => m.FlavorId)
 
   <h4>@Html.Label("Flavor Name")</h4>
-  @Html.EditorFor(m => m.FlavorName, new { htmlAttributes = new { @class = "form-control" @required = "required" }})
+  @Html.EditorFor(m => m.FlavorName, new { htmlAttributes = new { @class = "form-control", @required = "required" }})
 
   <br>
   <h4>@Html.LabelFor(m => m.Calories)</h4>
