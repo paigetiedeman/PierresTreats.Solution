@@ -1,3 +1,25 @@
 @{
   Layout = "_Layout";
 }
+
+@model PierresTreats.Models.Flavor
+
+<h2>Flavor Details</h2>
+<hr>
+
+<h4>Treats available for @Model.FlavorName </h4>
+
+@if (Model.JoinEntities.Count == 0)
+{
+  <p>This Flavor has no connected treats.</p>
+}
+else
+{
+  @foreach (var join in Model.JoinEntities)
+  {
+    <h4>@Html.ActionLink($"{join.Treat.TreatName}", "Details", "Treats", new { id = join.Treat.TreatId }, new { @class = "HeaderText" })</h4>
+  }
+}
+<br>
+<p class= "btn btn-light">@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }, new { @class = "ButtonText" })</p>
+<p class= "btn btn-light">@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId }, new { @class = "ButtonText" })</p>
