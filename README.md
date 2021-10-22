@@ -5,7 +5,7 @@
 [![Language][languageC-shield]][languageC-url]
 [![MIT License][license-shield]][license-url]
 
-# Project Name
+# Pierre's Sweet and Savory Treats
 
 #### This is a C# web application ...
 
