@@ -47,7 +47,7 @@ This web application ...
 ```
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=university;uid=[YOUR-UID];pwd=[YOUR-PASSWORD-HERE];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=paige_tiedeman;uid=[YOUR-UID];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```

@@ -32,7 +32,7 @@ namespace PierresTreats.Controllers
     [HttpPost]
     public async Task<ActionResult> Register (RegisterViewModel model)
     {
-      var user = new ApplicationUser { username = model.Email };
+      var user = new ApplicationUser { UserName = model.Email };
       IdentityResult result = await _userManager.CreateAsync(user, model.Password);
       if (result.Succeeded)
       {
