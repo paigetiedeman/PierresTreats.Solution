@@ -1,3 +1,24 @@
 @{
   Layout = "_Layout";
 }
+
+@using PierresTreats.Models
+@model IEnumerable<PierresTreats.Models.Treat>
+
+<h2>@User.Identity.Name's Recipes</h2>
+<hr>
+
+@if (Model.Any())
+{
+  @foreach (Treat treat in Model)
+  {
+    <div class="card-deck">
+      <div class="card text-center mb-3" style="width 22rem;">
+        <div class="card-body">
+          <h5 class="card-title">@Html.ActionLink($"{treat.TreatName}", "Details", new { id = treat.TreatId})</h5>
+            <p class="card-text">Rated: @treat.Rating</p>
+        </div>
+      </div>
+    </div>
+  }
+}

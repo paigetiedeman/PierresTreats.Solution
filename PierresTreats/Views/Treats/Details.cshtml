@@ -1,3 +1,43 @@
 @{
   Layout = "_Layout";
 }
+
+@model PierresTreats.Models.Treat
+
+<h2>@Model.TreatName</h2>
+<hr>
+
+<h4>Rating: @Model.Rating</h4>
+
+@if (@Model.JoinEntities.Count == 0)
+{
+  <li>/p>>This treat has one flavor: Plain</li>
+  <ul>
+    <li>220 Calories</li>
+  </ul>
+}
+else
+{
+  <h2>Flavors:</h2>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <div class="card-deck">
+      <div class="card text-center mb-3" style="width 22rem;">
+        <div class="card-body">
+          <h5 class="card-title">@join.Flavor.FlavorName</h5>
+            <p class="card-text">@join.Flavor.Calories</p>
+            @using (Html.BeginForm("DeleteFlavor", "Treats"))
+            {
+              @Html.Hidden("joinId", @join.FlavorTreatId)
+              <input type="submit" value="Delete" class="btn btn-light ButtonText"/>
+            }
+        </div>
+      </div>
+    </div>
+  }
+}
+
+<br>
+<p class= "btn btn-light">@Html.ActionLink("Edit This Treat", "Edit", new { id = Model.TreatId }, new { @class = "ButtonText" })</p>
+<p class= "btn btn-light">@Html.ActionLink("Delete This Treat", "Delete", new { id = Model.TreatId }, new { @class = "ButtonText" })</p>
+<p class= "btn btn-light">@Html.ActionLink("Add a Flavor to this Treat", "AddFlavor", new { id = Model.TreatId }, new { @class = "ButtonText" })</p>
