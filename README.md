@@ -5,17 +5,13 @@
 [![Language][languageC-shield]][languageC-url]
 [![MIT License][license-shield]][license-url]
 
-# Pierre's Sweet and Savory Treats
-
-#### This is a C# web application ...
-
-<br>
+<img src="PierresTreats/wwwroot/img/title.png">
 
 #### _By Paige Tiedeman_
 
-<br>
+#### This is a C# web application that uses MySQL database to store a many to many relationship for Pierre's Bakery.
 
-  <!-- <img src="ProjectName/wwwroot/img/RelationshipTable.png"> -->
+<br>
  
 </div>
 
@@ -32,10 +28,11 @@
 * Razor
 * Entity FrameworkCore
 * .NET Core CLI
+* Identity 
 
 ## Description
 
-This web application ...
+This web application stores Treats and Flavors and connects the Treats to specific flavors using routing techniques. Users have to log in to access Treats
 
 ## Installation Requirements
 
@@ -43,7 +40,7 @@ This web application ...
 * _Navigate into the top level directory_
 * _Open in your code editor_
 * _Commit and push your .gitignore file to your repo_
-* _Add the file ProjectName/ProjectName/appsettings.json and insert the following:_
+* _Add the file PierresTreats.Solution/PierresTreats/appsettings.json and insert the following:_
 ```
 {
   "ConnectionStrings": {
@@ -54,22 +51,29 @@ This web application ...
 * _Insert your MySQL password and user Id_
 * _Make sure to have .NET 5.0 installed_
 * _Run `$ dotnet restore` to install bin & obj folders_
-* _Make sure to have EntityFrameworkCore.Design 5.0 added and dotnet ef installed globally_
+* _Make sure to have dotnet ef installed globally_
 
 
 ## Steps To Use
-* _In your terminal navigate into ProjectName.Solution/ProjectName_
+* _In your terminal navigate into PierresTreats.Solution/PierresTreats_
 * _If Migrations folder is not present run `$ dotnet ef migrations add Initial` to add Migrations folder_
+* _Run `$ dotnet ef migrations add addIdentity` and `$ dotnet ef migrations add Authorization`_
 * _Then run `$ dotnet ef database update` to create the schema_
 * _Run `$ dotnet build` to build the site_
 * _Run `$ dotnet run` to start the live server_
-* _Click either button to see all ..._
+* _Click either button to see all Flavors or Treats_
 * _After clicking add  put in your inputs and hit submit to reveal the lists!_
 
 ## User Stories
 
 <details>
-<summary> As A ..</summary>
+<summary> As A User..</summary>
+
+* I can register, log in and log out with my credentials created.
+* I can view Flavors and treats they are linked to
+* I can create, view, edit and delete flavors when not logged in.
+* I can only view Treats if logged in.
+* Logged in I can edit, create, delete and save Treats.
 
 </details>
 

@@ -11,7 +11,7 @@
 {
   @Html.HiddenFor(m => m.TreatId)
 
-  <h4>@Html.LabelFor(m => m.TreatName)</h4>
+  <h4>@Html.Label("Treat Name")</h4>
   @Html.EditorFor(m => m.TreatName, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
   
   <br>
