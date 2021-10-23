@@ -43,3 +43,7 @@ h1 span {
   text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
   letter-spacing: -4px;
 }
+
+hr {
+  border-top: 2px solid #353c4291;
+}
